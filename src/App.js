@@ -5,34 +5,41 @@ import Main from './layout/Main';
 import Home from './Pages/Home';
 import Courses from './Pages/Courses';
 import Faq from './Pages/Faq';
+import Blog from './Pages/Blog';
 
 function App() {
   const router = createBrowserRouter([
-      {
-        path: '/',
-        element: <Main></Main>,
-        children: [
-          {
-            path : '/',
-            element :<Home></Home>
-          },
-          {
-            path: '/courses',
-            element: <Courses></Courses>
-          },
-          {
-            path :'/faq',
-            element: <Faq></Faq>
-          }
-        ]
-      }
+    {
+      path : '/',
+      element : <Main></Main>,
+      children : [
+        {
+          path : '/',
+          element : <Home></Home>
+        },
+        {
+          path : '/courses',
+          element : <Courses></Courses>
+        },
+        {
+          path : '/faq',
+          element : <Faq></Faq>
+        },        
+        {
+          path : '/blog',
+          element : <Blog></Blog>
+        }    
+
+
+      ]
+    }
   ]);
 
   return (
-    <div className="">
-      <RouterProvider router={router}>
+    <div>
+       <RouterProvider router={router}>
 
-      </RouterProvider>
+       </RouterProvider>
     </div>
   );
 }
