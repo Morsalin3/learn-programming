@@ -6,6 +6,8 @@ import Home from './Pages/Home';
 import Courses from './Pages/Courses';
 import Faq from './Pages/Faq';
 import Blog from './Pages/Blog';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +30,14 @@ function App() {
         {
           path : '/blog',
           element : <Blog></Blog>
+        },    
+        {
+          path : '/login',
+          element : <Login></Login>
+        },    
+        {
+          path : '/regiter',
+          element : <Register></Register>
         }    
 
 
