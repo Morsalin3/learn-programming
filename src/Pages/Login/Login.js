@@ -7,17 +7,22 @@ import { FaGoogle, FaGithub, FaFacebook} from "react-icons/fa";
 import './Login.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import {useNavigate} from 'react-router-dom';
 import { useState } from 'react';
+import {useLocation} from 'react-router-dom';
 
 
 const Login = () => {
     const [error, setError] = useState('');
-    const {providerLogin, signIn} = useContext(AuthContext);
+    const {providerLogin, signIn, githubLogin} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from  = location.state?.from?.pathname || '/';
 
    const googleProvider = new GoogleAuthProvider()
+   const githubProvider = new GithubAuthProvider();
 
    const handleGoogleSignIn =(event) => {
     event.preventDefault();
@@ -28,6 +33,20 @@ const Login = () => {
         
       })
       .catch(error => console.log(error)); 
+  }
+
+  const handleGithubSignIn =(event)=>{
+    event.preventDefault();
+    githubLogin(githubProvider)
+    .then(result =>{
+        const user = result.user;
+        console.log(user);
+    })
+    .catch(error =>{
+        console.error(error);
+        setError(error.message);
+
+    })
   }
 
   const handleSubmit =event =>{
@@ -42,7 +61,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError('');
-        navigate('/courses')
+        navigate(from, {replace: true});
     })
     .catch(error => {
         console.error(error)
@@ -74,7 +93,7 @@ const Login = () => {
         <Button onClick={handleGoogleSignIn} variant="outline-info" type="submit">
         <FaGoogle></FaGoogle> Login with Google
         </Button>
-        <Button variant="outline-dark" type="submit">
+        <Button  onClick={handleGithubSignIn} variant="outline-dark" type="submit">
         <FaGithub></FaGithub> Login with Github
         </Button>
        </ButtonGroup>

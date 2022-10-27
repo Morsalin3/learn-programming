@@ -16,7 +16,7 @@ const Cards = ({course}) => {
                 <Card.Text>
                     {
                     details.length > 50 ?
-                    <>{details.slice(0, 70) + '...'}</>
+                    <>{details.slice(0, 50) + '...'}</>
                     :
                     <>{details}</>
                     }

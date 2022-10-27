@@ -10,6 +10,8 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Details from './Pages/Details/Details';
 import Cards from './Pages/Cards/Cards';
+import CheckOut from './Pages/CheckOut/CheckOut';
+import PrivateRoute from './Pages/Routes/PrivateRoute/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -35,6 +37,11 @@ function App() {
         {
           path : '/cards',
           element : <Cards></Cards>
+        },        
+        {
+          path : '/category/:id',
+          element : <CheckOut></CheckOut>,
+          loader: async ({params}) =>fetch(`https://learn-programming-server.vercel.app/category/${params.id}`) 
         },        
         {
           path : '/faq',

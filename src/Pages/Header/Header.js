@@ -7,9 +7,16 @@ import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
+import {Switch} from 'antd'
+import { useState } from 'react';
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext)
+    // const [toggle, setToggle] = useState(false);
+
+    // const toggler = () =>{
+    //     toggle ? setToggle(false): setToggle(true);
+    // }
 
     const handleLogOut =()=>{
         logOut()
@@ -56,13 +63,13 @@ const Header = () => {
                     : <FaUser></FaUser>
                     }
                 </Nav.Link>
+
                 </Nav>
-                {/* <div className='d-lg-none'>
-                <LeftSideNav></LeftSideNav>
-                </div> */}
+                    
             </Navbar.Collapse>
             </Container>
     </Navbar>
+    
         </div>
     );
 };
