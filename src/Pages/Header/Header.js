@@ -3,24 +3,23 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import {NavLink} from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const Header = () => {
     return (
         <div>
         <Navbar collapseOnSelect className='mb-4 rounded' expand="lg" bg="primary" variant="dark">
             <Container>
-            <Navbar.Brand ><Nav.Link to='/'>Learn Programming</Nav.Link></Navbar.Brand>
+            <Navbar.Brand ><Nav.Link>Learn Programming</Nav.Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ms-auto">
-                <Nav.Link to='/courses'>Courses</Nav.Link>
                 {/* <Link className="btn text-xl" to ='/'>Home</Link> */}
-                <Nav.Link to='/faq'>FAQ</Nav.Link>
-                <Nav.Link to='/blog'>Blog</Nav.Link>
-                <Nav.Link to='/login'>Login</Nav.Link>
-                <Nav.Link to='/register'>Register</Nav.Link>
-                
+             <Link to='/courses'><Button variant="primary">Courses</Button></Link>
+             <Link to='/faq'><Button variant="primary">FAQ</Button></Link>
+             <Link to='/blog'><Button variant="primary">Blog</Button></Link>
+             <Link to='/login'><Button variant="primary">Login</Button></Link>
+             <Link to='/register'><Button variant="primary">Register</Button></Link>
                 </Nav>
                 <Nav>
                 <Nav.Link href="#deets">user</Nav.Link>
