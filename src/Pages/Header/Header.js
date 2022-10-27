@@ -9,7 +9,13 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleLogOut =()=>{
+        logOut()
+        .then( ()=>{})
+        .catch(error => console.log(error))
+    }
     return (
         <div>
         <Navbar collapseOnSelect className='mb-4 rounded' expand="lg" bg="primary" variant="dark">
@@ -22,16 +28,30 @@ const Header = () => {
              <Link to='/courses'><Button variant="primary">Courses</Button></Link>
              <Link to='/faq'><Button variant="primary">FAQ</Button></Link>
              <Link to='/blog'><Button variant="primary">Blog</Button></Link>
-             <Link to='/login'><Button variant="primary">Login</Button></Link>
-             <Link to='/register'><Button variant="primary">Register</Button></Link>
+            
                 </Nav>
                 <Nav>
-                <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+                <Nav.Link href="#deets">
+                    {
+                          user?.uid ?
+                       <>                      
+                      <Link><Button onClick={handleLogOut} variant="primary">Log out</Button></Link>
+                       </>
+                       :
+                       <>
+                       <Link to='/Login'><Button variant="primary">Login</Button></Link>
+                       <Link to='/register'><Button variant="primary">Register</Button></Link>
+                        
+                       </>
+                    }
+
+                    </Nav.Link>
                 <Nav.Link eventKey={2} href="#memes">
-                    {user.photoURL ?
-                    <Image
+                    {user?.photoURL ?
+                    <Image 
+                    title={user.displayName}
                     style={{height:'30px'}} roundedCircle
-                    src={user.photoURL}
+                    src={user?.photoURL}
                     ></Image>
                     : <FaUser></FaUser>
                     }

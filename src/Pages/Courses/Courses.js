@@ -4,7 +4,6 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import Category from '../Category/Category';
 import Button from 'react-bootstrap/Button';
 import Cards from '../Cards/Cards';
 
@@ -20,7 +19,8 @@ const Courses = () => {
         fetch('https://learn-programming-server.vercel.app/categories')
         .then(res => res.json())
         .then(data => setCategories(data))
-    },[])
+    
+    },[]);
   
     return (
         <div>

@@ -8,8 +8,8 @@ import Faq from './Pages/Faq';
 import Blog from './Pages/Blog/Blog';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import Category from './Pages/Category/Category';
-import Details from './Pages/Category/Category';
+import Details from './Pages/Details/Details';
+import Cards from './Pages/Cards/Cards';
 
 function App() {
   const router = createBrowserRouter([
@@ -27,15 +27,15 @@ function App() {
           loader: async ()=> fetch('https://learn-programming-server.vercel.app/courses')
         },
         {
-          path : '/details/:id',
+          path : '/category/:id',
           element : <Details></Details>,
-          loader: async ({params})=> fetch(`https://learn-programming-server.vercel.app/category/${params.id}`)
-        },    
-        {
-          path : '/category',
-          element : <Category></Category>
-        },
+          loader: ({params})=> fetch(`https://learn-programming-server.vercel.app/category/${params.id}`)
+        }, 
 
+        {
+          path : '/cards',
+          element : <Cards></Cards>
+        },        
         {
           path : '/faq',
           element : <Faq></Faq>

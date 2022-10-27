@@ -31,7 +31,7 @@ const Cards = ({course}) => {
                     <FaEye className='me-2'></FaEye>
                     <span>{total_view}</span>
                 </div>
-                <Link to={`/details/${id}`}><Button variant="primary">Details</Button></Link>
+                <Link to={`/category/${category_id}`}><Button variant="primary">Details</Button></Link>
             </Card.Footer>
                 
              </Card>
