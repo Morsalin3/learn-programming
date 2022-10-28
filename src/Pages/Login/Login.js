@@ -54,6 +54,7 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+    
 
     signIn(email, password)
     .then(result =>{
@@ -102,6 +103,7 @@ const Login = () => {
        </Form.Text>
        
       </Form>
+      <p>New to ema john <Link to='/register'>Create a new Account</Link></p>
         </div>
     );
 };

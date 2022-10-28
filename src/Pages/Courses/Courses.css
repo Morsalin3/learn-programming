@@ -4,3 +4,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
+
+
+/* On screens that are 630px or less, set the background color to blue */
+@media screen and (max-width: 630px) {
+   .courses-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }

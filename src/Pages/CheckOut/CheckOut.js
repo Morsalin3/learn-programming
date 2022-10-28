@@ -10,6 +10,7 @@ const CheckOut = () => {
     const checkout = useLoaderData();
     const {user} = useContext(AuthContext);
     const {title} = checkout;
+    console.log(checkout, user);
     return (
         <div>
             <h2>Welcome to Checkout Page</h2>

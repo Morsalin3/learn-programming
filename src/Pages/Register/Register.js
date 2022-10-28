@@ -62,17 +62,12 @@ const Register = () => {
        <Button variant="outline-primary" type="submit">
           Register
         </Button>
-        {/* <Button variant="outline-info" type="submit">
-        <FaGoogle></FaGoogle> Login with Google
-        </Button>
-        <Button variant="outline-dark" type="submit">
-        <FaGithub></FaGithub> Login with Github
-        </Button> */}
        </ButtonGroup>
        <Form.Text className='text-danger'>
             {error}
        </Form.Text>
       </Form>
+      <p>Already have an Account <Link to='/login'>Login</Link></p>
         </div>
     );
 };

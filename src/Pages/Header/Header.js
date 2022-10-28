@@ -7,16 +7,17 @@ import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
-import {Switch} from 'antd'
+import logo  from '../../assets/images/logo.png';
 import { useState } from 'react';
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext)
-    // const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
 
-    // const toggler = () =>{
-    //     toggle ? setToggle(false): setToggle(true);
-    // }
+    const handleToggle = () =>{
+        setToggle(!toggle);
+ }
 
     const handleLogOut =()=>{
         logOut()
@@ -25,20 +26,23 @@ const Header = () => {
     }
     return (
         <div>
-        <Navbar collapseOnSelect className='mb-4 rounded' expand="lg" bg="primary" variant="dark">
-            <Container>
-            <Navbar.Brand ><Nav.Link>Learn Programming</Nav.Link></Navbar.Brand>
+    <Navbar collapseOnSelect className='mb-4 rounded' expand="lg" bg="primary" variant="dark">
+        <Container className='d-flex'>
+            <Navbar.Brand ><Nav.Link><span><Image style={{width:'60px',marginRight:'5px'}} src={logo}/></span>Lifetime knowledge</Nav.Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="ms-auto">
-                {/* <Link className="btn text-xl" to ='/'>Home</Link> */}
+            <Nav className="ms-auto">
+            <Link><Button onClick={handleToggle} variant="primary">
+                <span>{toggle ? <FaToggleOff/> : <FaToggleOn/> }</span>   
+                </Button></Link>
+             <Link to='/'><Button variant="primary">Home</Button></Link>
              <Link to='/courses'><Button variant="primary">Courses</Button></Link>
              <Link to='/faq'><Button variant="primary">FAQ</Button></Link>
              <Link to='/blog'><Button variant="primary">Blog</Button></Link>
             
                 </Nav>
                 <Nav>
-                <Nav.Link href="#deets">
+                <Nav.Link >
                     {
                           user?.uid ?
                        <>                      
@@ -53,7 +57,7 @@ const Header = () => {
                     }
 
                     </Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
+                <Nav.Link >
                     {user?.photoURL ?
                     <Image 
                     title={user.displayName}
@@ -64,10 +68,10 @@ const Header = () => {
                     }
                 </Nav.Link>
 
-                </Nav>
+            </Nav>
                     
             </Navbar.Collapse>
-            </Container>
+        </Container>
     </Navbar>
     
         </div>

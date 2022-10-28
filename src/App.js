@@ -12,6 +12,7 @@ import Details from './Pages/Details/Details';
 import Cards from './Pages/Cards/Cards';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import PrivateRoute from './Pages/Routes/PrivateRoute/PrivateRoute';
+import Footer from './Pages/Footer/Footer';
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +31,7 @@ function App() {
         },
         {
           path : '/category/:id',
-          element : <Details></Details>,
+          element : <PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({params})=> fetch(`https://learn-programming-server.vercel.app/category/${params.id}`)
         }, 
 
@@ -58,11 +59,16 @@ function App() {
         {
           path : '/register',
           element : <Register></Register>
+        },    
+        {
+          path : '/footer',
+          element : <Footer></Footer>
         }    
 
 
-      ]
-    }
+
+      ]},
+      {path: '*', element: <div><h2>This route not found</h2></div> }
   ]);
 
   return (
