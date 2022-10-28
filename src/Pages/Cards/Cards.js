@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FaRegBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
+import { Card, Button } from 'react-bootstrap';
+import { FaStar, FaEye } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 

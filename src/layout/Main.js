@@ -6,14 +6,13 @@ import Header from '../Pages/Header/Header';
 
 const Main = () => {
     return (
-        // <div className='Container border border-1'>
-        //     <h4>this is main</h4>
-            <Container className='border border-1'>
+        
+            <Container className=''>
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
             </Container>
-        // </div>
+        
     );
 };
 

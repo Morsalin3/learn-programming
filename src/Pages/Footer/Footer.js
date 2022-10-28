@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css'
 import {Link} from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { FaFacebook, FaTwitter, FaTwitch ,FaWhatsapp} from "react-icons/fa";
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -10,7 +9,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const Footer = () => {
     return (
     
-    <div className="footer-container bg-primary ">
+    <div className="footer-container bg-primary rounded">
 
        <div>
           <Link to='/courses'><Button variant="primary">Courses</Button></Link>

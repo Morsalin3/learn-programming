@@ -28,7 +28,7 @@ const Header = () => {
         <div>
     <Navbar collapseOnSelect className='mb-4 rounded' expand="lg" bg="primary" variant="dark">
         <Container className='d-flex'>
-            <Navbar.Brand ><Nav.Link><span><Image style={{width:'60px',marginRight:'5px'}} src={logo}/></span>Lifetime knowledge</Nav.Link></Navbar.Brand>
+            <Navbar.Brand ><Nav.Link className="fw-semibold"><span><Image style={{width:'60px',marginRight:'5px'}} src={logo}/></span>Lifetime knowledge</Nav.Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">

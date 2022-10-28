@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub, FaFacebook} from "react-icons/fa";
 import './Login.css'
+import { ToastContainer, toast } from 'react-toastify';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -74,6 +75,7 @@ const Login = () => {
     });
   }
 
+
     return (
         <div className='w-50 m-auto border border-1 p-5 mb-3 rounded'>
             <h2 className='text-center'>Login</h2>
@@ -87,9 +89,6 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control name="password" type="password" placeholder="Password" required/>
         </Form.Group>
-        {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
        
        <ButtonGroup >
        <Button variant="outline-primary" type="submit">
@@ -105,9 +104,9 @@ const Login = () => {
        <Form.Text className='text-danger'>
             {error}
        </Form.Text>
-       
+
       </Form>
-      <p>New to ema john <Link to='/register'>Create a new Account</Link></p>
+      <p>New to Lifetime Knowledge <Link to='/register'>Create a new Account</Link></p>
         </div>
     );
 };

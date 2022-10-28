@@ -1,6 +1,6 @@
 import React from 'react';
 import './Courses.css';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import {Row, Col } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -13,7 +13,6 @@ const Courses = () => {
     const courses = useLoaderData();
     const [categories, setCategories] = useState([]);
     
-    // const [courses, setCourses] = useState([])
     
     useEffect( () =>{
         fetch('https://learn-programming-server.vercel.app/categories')

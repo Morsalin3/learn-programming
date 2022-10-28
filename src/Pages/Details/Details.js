@@ -1,7 +1,7 @@
 import React from 'react';
 import './Details.css'
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FaRegBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
+import { Card, Button } from 'react-bootstrap';
+import { FaStar, FaEye } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import {useLoaderData} from 'react-router-dom'
 
@@ -13,12 +13,12 @@ const Details = () => {
         <div>
             <h2 className='text-center'>Welcome to Course Details</h2>
             <Card className='w-50 mb-3 m-auto'>
-                <Card.Img className='w-100' variant="top" src={image_url} />
                 <Card.Body>
-                <Card.Title className='fs-6' >{title}</Card.Title>
+                <Card.Title className='fs-5' >{title}</Card.Title>
                 <Card.Text>
                     {details}
                 </Card.Text>
+                <Card.Img className='w-100' variant="top" src={image_url} />
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-between">
                 <div>
