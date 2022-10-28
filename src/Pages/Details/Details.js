@@ -32,8 +32,8 @@ const Details = () => {
                     <FaEye className='me-2'></FaEye>
                     <span>{total_view}</span>
                 </div>
-                <div>
-                <Link to={`/category/${category_id}`}><Button className='mx-2' variant="primary">Get premium access</Button></Link>
+                <div className='premium-btn'>
+                <Link to={`/checkout/${category_id}`}><Button className='access-btn mx-2' variant="primary">Get premium access</Button></Link>
                 <Link><Button variant="primary">Get Pdf</Button></Link>
                 </div>
             </Card.Footer>

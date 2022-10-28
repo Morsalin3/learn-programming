@@ -1,0 +1,16 @@
+
+
+
+@media screen and (max-width: 1200px) {
+    .premium-btn {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         
+     }
+
+     .access-btn{
+        margin-bottom: 5px;
+     }
+   }

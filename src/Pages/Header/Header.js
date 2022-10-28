@@ -60,6 +60,7 @@ const Header = () => {
                 <Nav.Link >
                     {user?.photoURL ?
                     <Image 
+                    data-bs-toggle="tooltip" data-bs-placement="top"
                     title={user.displayName}
                     style={{height:'30px'}} roundedCircle
                     src={user?.photoURL}

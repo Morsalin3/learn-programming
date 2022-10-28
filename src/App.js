@@ -31,7 +31,7 @@ function App() {
         },
         {
           path : '/category/:id',
-          element : <PrivateRoute><Details></Details></PrivateRoute>,
+          element : <Details></Details>,
           loader: ({params})=> fetch(`https://learn-programming-server.vercel.app/category/${params.id}`)
         }, 
 
@@ -40,10 +40,10 @@ function App() {
           element : <Cards></Cards>
         },        
         {
-          path : '/category/:id',
-          element : <CheckOut></CheckOut>,
+          path : '/checkout/:id',
+          element : <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
           loader: async ({params}) =>fetch(`https://learn-programming-server.vercel.app/category/${params.id}`) 
-        },        
+        },         
         {
           path : '/faq',
           element : <Faq></Faq>

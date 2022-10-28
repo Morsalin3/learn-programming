@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const Cards = ({course}) => {
-   const  {category_id, id, title, image_url, details,rating, total_view} = course;
+   const  {category_id, title, image_url, details,rating, total_view} = course;
     return (
         <div className='g-2'>
         

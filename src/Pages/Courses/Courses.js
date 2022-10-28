@@ -21,7 +21,7 @@ const Courses = () => {
         .then(data => setCategories(data))
     
     },[]);
-  
+
     return (
         <div>
             <Row>

@@ -13,12 +13,12 @@ const CheckOut = () => {
     console.log(checkout, user);
     return (
         <div>
-            <h2>Welcome to Checkout Page</h2>
+            <h2 className='text-center'>Welcome to Checkout Page</h2>
+            
             <Card className='w-50 mb-3 m-auto'>
                 <Card.Body>
-                <Card.Title className='fs-6' >{title}</Card.Title>
-                <Card.Text>
-                    
+                <Card.Title className='fs-6' ><h4>Your Order</h4></Card.Title>
+                <Card.Text> 
                 </Card.Text>
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-between">
@@ -34,6 +34,24 @@ const CheckOut = () => {
             </Card.Footer>
                 
              </Card>
+                <table class="table w-25">
+                    <tbody>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td >Larry the Bird</td>
+                        
+                     
+                       
+                      </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td >Larry the Bird</td>
+                      
+                       
+                        
+                      </tr>
+                    </tbody>    
+                </table>
         </div>
     );
 };
