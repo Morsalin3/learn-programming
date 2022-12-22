@@ -65,10 +65,12 @@ function App() {
           element : <Footer></Footer>
         }    
 
-
-
-      ]},
-      {path: '*', element: <div><h2>This route not found</h2></div> }
+      ]
+    },
+      {
+        path: '*',
+        element: <div><h2>This route not found</h2></div> 
+      }
   ]);
 
   return (

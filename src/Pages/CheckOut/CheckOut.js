@@ -8,6 +8,7 @@ const CheckOut = () => {
     const checkout = useLoaderData();
     const {user} = useContext(AuthContext);
     const {title,  price} = checkout;
+    const {displayName, email} = user;
     // console.log(checkout, user);
     return (
         <div>
@@ -21,8 +22,8 @@ const CheckOut = () => {
                 <div className="m-3 d-flex justify-content-between">
                     <div className='shadow p-3 rounded'>
                     <h5>Bellings Information</h5>
-                    <p>Youser: {user.displayName}</p>
-                    <p>Youser Email : {user.email}</p>
+                    <p>User Name: {displayName}</p>
+                    <p>User Email: {email}</p>
                    
                     </div>  
 
